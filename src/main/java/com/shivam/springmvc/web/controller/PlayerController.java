@@ -1,6 +1,5 @@
 package com.shivam.springmvc.web.controller;
 
-import com.shivam.springmvc.model.Player;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

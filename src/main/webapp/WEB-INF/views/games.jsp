@@ -39,44 +39,52 @@
 
         <div class="jumbotron text-center">
             <h1>Games Arcade</h1>
-            <p>Resize this responsive page to see the effect!</p>
+            <p>Buy PC games at attractive price !!</p>
         </div>
 
 
 
 
         <div class="container">
-            <div class="row">
-                <h1 style="text-align: center;">List Games</h1>
-                <a style="margin-left: 100px;" class="btn btn-primary" href="/springbootmvc/welcome" role="button">Add
-                    game</a>
+            <div style ="margin : 10px">
+                <a type="button" class="btn btn-primary btn-md" href="/v1/games/add">Add Game</a>
             </div>
 
 
+            <div class="panel panel-primary">
 
-            <table class="table table-striped table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th> Game </th>
-                        <th> Price</th>
-                        <th> Description </th>
-                        <th> Actions </th>
-                    </tr>
-                </thead>
+                <div class="panel-heading">
+                    <h3>List of Games</h3>
+                </div>
 
-                <tbody>
-                    <tr>
-                        <c:forEach var="game" items="${games}">
-                            <td> ${game.name}</td>
-                            <td> ${game.id}</td>
-                            <td> ${game.price}</td>
-                        </c:forEach>
-                    </tr>
-                </tbody>
+                <div class="panel-body">
+                    <table class="table table-dark table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                <th> Game </th>
+                                <th> Price</th>
+                                <th> Actions </th>
+                            </tr>
+                        </thead>
 
-            </table>
+                        <tbody>
+                            <c:forEach var="game" items="${games}">
+                                <tr>
+                                    <td> ${game.name}</td>
+                                    <td> ${game.price}</td>
+                                    <td><a type="button" class="btn btn-success"
+                                            href="/v1/games/update?id=${game.id}">Update</a>
+                                        <a type="button" class="btn btn-warning"
+                                            href="/v1/games/delete?id=${game.id}">Delete</a>
+                                    </td>
+                            </c:forEach>
 
-        </div>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
 
 
 

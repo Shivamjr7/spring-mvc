@@ -1,36 +1,25 @@
 package com.shivam.springmvc.model;
 
+import lombok.*;
 
-//TODO make this an entity as next step and persist in db
-//TODO include lombok to remove getter/setter and make it as a builder
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Getter
+@Setter
+@Builder
+@Entity
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Game {
-    private String name;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private int price;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
+    private String name;
 
 }
